@@ -152,10 +152,42 @@ Utiliza estos datos, extraídos del fichero `CITAS` (sin la cita errónea de CA-
 
 **4.1.** (0,5 p) Representa en **modelo jerárquico** la relación *clientes → mascotas*. Explica por qué este modelo **sí** encaja bien en este caso.
 
+```mermaid
+flowchart TD
+    C[Citas] --> C1[Clientes]
+    C1 --> R[Rosa Medina]
+    C1 --> T[Tomás Vidal]
+
+    R --> P[Luna perro]
+    R --> K[Kiko gato]
+    T --> G[Luna gato]
+```
+En este caso, el modelo jerarquico si encaja correctamente ya que coincide la relaación 1:N, ya que un hijo solo puede tener un padre, pero un padre puede tener varios hijos.
+
+
 **4.2.** (0,5 p) Ahora intenta representar en modelo jerárquico la relación *veterinarios → mascotas atendidas*. Indica qué dato queda **duplicado**, explica por qué ocurre y qué modelo de los vistos en la unidad lo evitaría.
 
+```mermaid
+flowchart TD
+    V[Veterinarios]
+
+    V --> S[Dra Sanz]
+    V --> O[Dr Ortega]
+
+    S --> P[Luna perro]
+    O --> K[Kiko gato]
+    S --> G[Luna gato]
+    O --> P[Luna perro]
+    
+```
 **4.3.** (1 p) Diseña en **modelo relacional** las tablas `CLIENTES`, `MASCOTAS`, `VETERINARIOS` y `CITAS`. Indica sus campos principales, la **clave primaria** (PK) y las **claves externas** (FK).
 
+| Tabla | Campos | Clave primaria | Claves externas |
+|---|---|---|---|
+| CLIENTES | Nº_CLIENTE, DNI, NOMBRE, APELLIDO, TELEFONO | Nº_SOCIO | NINGUNA |
+| MASCOTAS | Nº_CHIP, NOMBRE | Nº_CHIP | NINGUNA |
+| VETERINARIOS | ID_VETERINARIO, NOMBRE, APELLIDO, TELEFONO | ID_VETERINARIO | NINGUNA |
+| CITAS | COD_CITAS, Nº_CLIENTE, ID_VETERINARIO | COD_CITAS | Nº_CLIENTE &rarr; CLIENTE, ID_VETERINARIO &rarr; VETERINARIOS |
 ---
 
 ### Actividad 5. Clasificación de los sistemas gestores · RA1.f · RA1.i · 1 punto
