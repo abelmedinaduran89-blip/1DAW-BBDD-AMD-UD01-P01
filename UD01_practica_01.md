@@ -101,9 +101,19 @@ En el nuevo fichero **MASCOTAS** añadiria un Campo Clave el cual seria el ***Id
 
 **2.1.** (0,5 p) Explica cómo evitaría un SGBD las incidencias **I2**, **I4** e **I5**, indicando en cada caso la **ventaja** del SGBD que lo permite.
 
+- I2 &rarr; El SGDB controlaría todas las operaciones simultaneas mediante transacciones y mecanismos de bloqueo, lo que llevaría a que solo una persona pueda acudir a una hora concreta a la cita. La ventaja sería: Control de Concurrencia.
+- I4 &rarr; Se crearían permisos y usuarios diferentes para cada trabajador, ya sea en prácticas o no, y así cada uno podrá acceder a lo que realmente tiene que acceder. La ventaja sería: Seguridad y control de acceso.
+- I5 &rarr; Se crearían claves primarias y ajenas para asi impedir que se den citas a clientes que realmente no existen. La ventaja sería: Integridad de los datos.
+
 **2.2.** (0,5 p) Indica **dos inconvenientes concretos** que tendría para Bahía implantar un SGBD y explica si, aun así, lo recomiendas.
+ 
+ Dos de los inconvenientes que podría presentar implantar un SGDB para Bahía sería el gran coste económico que le supondría y la formación previa que les tendrían que dar a todos sus trabajadores para que aprendan a usar el nuevo sistema.
+
+  No recomendaria implantar un SGDB ya que por ahora solo cuenta con unos 900 clientes, pero si su objetivo es crecer brutalmente hasta alcanzar cifras de entre 10.000 y 15.000 clientes si que seria necesario.
 
 **2.3.** (0,3 p) Una veterinaria rural trabaja sola, con unos 20 clientes, y apunta sus visitas en un fichero de texto. ¿Le recomendarías un SGBD? Justifícalo comparando su situación con la de Bahía.
+
+En este caso, un fichero de texto puede ser suficiente para guardar los clientes, mascotas y el tipo de tratamiento que les realiza, ya que maneja poca informacion y no necesita que mas de una persona a la vez acceda a ella y la implantación de un SGDB supondría una mayor complejidad, coste y un gran tiempo de mantenimiento que no creo que le llegase a compensar sus ventajas, al igual que con Bahía, si su objetivo es seguir creciendo y llegar a atraer una gran cantidad de clientes, si que se lo reomendaría, pero por el momento no.
 
 ---
 
