@@ -123,22 +123,22 @@ En este caso, un fichero de texto puede ser suficiente para guardar los clientes
 
 | Nº | Situación | Elemento del SGBD | Tipo de usuario |
 |---|---|---|---|
-| 1 | La gerente decide que se registrará el número de microchip de cada mascota, lo que obliga a modificar la estructura de la tabla `MASCOTAS`. | | |
-| 2 | El técnico ejecuta `CREATE TABLE CITAS (...)`. | | |
-| 3 | El recepcionista consulta las citas de mañana de la Dra. Sanz. | | |
-| 4 | Se ejecuta `GRANT SELECT ON CITAS TO veterinarios;` | | |
-| 5 | El SGBD rechaza una cita porque el cliente no existe. | | |
-| 6 | El técnico consulta qué tablas existen y qué permisos tiene cada usuario. | | |
-| 7 | Se cargan en la base de datos los ficheros antiguos de las dos clínicas. | | |
-| 8 | La empresa externa programa la pantalla de la web que registra una cita nueva. | | |
+| 1 | La gerente decide que se registrará el número de microchip de cada mascota, lo que obliga a modificar la estructura de la tabla `MASCOTAS`. | DDL | Administrador de la BBDD |
+| 2 | El técnico ejecuta `CREATE TABLE CITAS (...)`. | DDL | Administrador de la BBDD |
+| 3 | El recepcionista consulta las citas de mañana de la Dra. Sanz. | DML | Usuario final |
+| 4 | Se ejecuta `GRANT SELECT ON CITAS TO veterinarios;` | DCL | Administrador de la BBDD |
+| 5 | El SGBD rechaza una cita porque el cliente no existe. | Núcleo | Ninguno (automático) |
+| 6 | El técnico consulta qué tablas existen y qué permisos tiene cada usuario. | Diccionario de datos | Administrador de la BBDD |
+| 7 | Se cargan en la base de datos los ficheros antiguos de las dos clínicas. | Utilidades | Administrador de la BBDD |
+| 8 | La empresa externa programa la pantalla de la web que registra una cita nueva. | DML  | Programador de aplicaciones |
 
 **3.2.** (0,4 p) Para cada cambio, indica el **nivel de la arquitectura** que se modifica (interno, conceptual o externo), el **tipo de independencia** que interviene (si procede) y **a quién afecta**.
 
 | Cambio | Nivel | Independencia | ¿A quién afecta? |
 |---|---|---|---|
-| a) El técnico crea un índice sobre el DNI de los clientes para acelerar las búsquedas. | | | |
-| b) Se añade el campo `MICROCHIP` a la tabla `MASCOTAS`. | | | |
-| c) Se crea una vista para el alumno en prácticas que no muestra el IBAN. | | | |
+| a) El técnico crea un índice sobre el DNI de los clientes para acelerar las búsquedas. | Interno | Independencia física | No afecta a nadie |
+| b) Se añade el campo `MICROCHIP` a la tabla `MASCOTAS`. | Conceptual | Independencia lógica | Solo a programas o usuarios que necesiten el nuevo campo |
+| c) Se crea una vista para el alumno en prácticas que no muestra el IBAN. | Externo o Vistas | NO AFECTA | A los alumnos en practicas, que solo veran lo que incluya la vista |
 
 ---
 
