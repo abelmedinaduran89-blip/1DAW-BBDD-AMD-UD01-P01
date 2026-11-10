@@ -196,12 +196,14 @@ Completa la tabla. Si un sistema **no es un SGBD**, indícalo.
 
 | Sistema | ¿Es un SGBD? | Modelo de datos | Ubicación (centralizada / distribuida) | Usuarios (uno / varios simultáneos) | Configuración |
 |---|---|---|---|---|---|
-| A. El sistema actual: ficheros en el ordenador de cada clínica. | | | | | |
-| B. La veterinaria rural instala SQLite en su portátil. | | | | | |
-| C. MySQL en un servidor de Cádiz al que se conectan las dos clínicas. | | | | | |
-| D. Cada una de las tres clínicas tiene su propio servidor PostgreSQL y el conjunto funciona como una única base de datos. | | | | | |
+| A. El sistema actual: ficheros en el ordenador de cada clínica. | No, es un sistema de ficheros | Ninguno | Cnetralizada | Uno | Monoequipo |
+| B. La veterinaria rural instala SQLite en su portátil. | Si | Relacional | Centralizada | Uno | Monoequipo |
+| C. MySQL en un servidor de Cádiz al que se conectan las dos clínicas. | Si | Relacional | Centralizada | Varios simultáneos | Cliente-servidor |
+| D. Cada una de las tres clínicas tiene su propio servidor PostgreSQL y el conjunto funciona como una única base de datos. | Si | Relacional | Distribuida | Varios simultáneos | Distribuida |
 
 Explica en dos líneas por qué el sistema A **no es** una base de datos distribuida, aunque la información esté en dos ordenadores.
+
+No lo es ya que los ficheros no estan gestionados por una SGDB, cada clinica tiene sus datos aislados y en una BBDD distribuida los datos estan repartido en varios equipos conectados en red, pero el usuario los ve como una unica base para todos, y aqui para apuntar un nuevo cliente en una de las dos clinicas, hace falta mucho tiempo de trabajo.
 
 ---
 
