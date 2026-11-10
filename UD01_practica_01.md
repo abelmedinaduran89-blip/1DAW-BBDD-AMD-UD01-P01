@@ -218,16 +218,18 @@ Con la apertura de Chiclana, el técnico plantea dos opciones:
 
 | Opción | Ubicación de la información | Ventaja | Inconveniente |
 |---|---|---|---|
-| A | | | |
-| B | | | |
+| A | En un solo servidor en Cádiz | Hay una sola copia de los datos y es facil de administrar | Es un único punto de fallo, por lo que si el servidor se cae, las tres clínicas se quedan sin servicio |
+| B | Repartido en tres servidores, uno por clínica | Cada zona trabaja con un servidor cercano y mucho más rapido, y si se cae alguno de ellos, las demas clínicas siguen funcionando con normalidad. | Es más complejo y más caro, y hay que sincronizar los datos entre los servidores. |
 
 **6.2.** (0,5 p · RA1.c) La aplicación web seguirá una arquitectura de tres capas. Indica en qué capa (presentación, lógica o datos) se realiza cada tarea y justifica la tarea *b*:
 
-- **a)** Mostrar el formulario para pedir cita.
-- **b)** Comprobar que la hora elegida sigue libre.
-- **c)** Guardar la cita.
+- **a)** Mostrar el formulario para pedir cita. &rarr; Esta tarea se realiza en la capa presentación.
+- **b)** Comprobar que la hora elegida sigue libre. &rarr; Esta tarea se realiza en la capa datos, ya que es donde se encuentra toda la informacion sobre todo.
+- **c)** Guardar la cita. &rarr; Esta tarea se realiza en la capa lógica.
 
 **6.3.** (1,2 p · RA1.g · RA1.h) Se corta la conexión a internet de la clínica de Puerto Real durante una mañana. ¿Qué ocurre en Puerto Real y en las otras clínicas con la opción A? ¿Y con la opción B?
+
+Con la opción A, todas las clinicas dejaran de funcionar debido a su estructura, mientras que con la opción B, la clinica de Puerto Real dejara de funcionar mientras que las demas clinicas seguiran funcionando con normalidad como si nada hubiera pasado.
 
 ---
 
